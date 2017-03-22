@@ -1,0 +1,48 @@
+
+<div>
+    <div class="task-container col-md-8 no-padding-left padding-right-sm">
+            <div class="panel panel-primary">
+                  <div class="panel-heading">任务1
+                    <button class="btn btn-danger btn-xs pull-right">
+                     <i class="glyphicon glyphicon-plus"></i>
+                    </button>
+                  </div>
+                  <div class="panel-body"></div>
+            </div>
+
+    </div>
+    <div class="slide-right col-md-4 col-xs-8 no-padding-right padding-left-sm">
+        <div class="panel panel-primary">
+            <div class="panel-heading">任务面板</div>
+            <div class="panel-body">
+                 <div class="task-part">
+                     <form ng-submit="addTask()"  >
+                         <input type="text" class="form-control" placeholder="需要做什么" ng-model="task.description" required>
+                     </form>
+                     <table class="table table-bordered table-hover table-striped  task-list">
+                         <tr ng-repeat="task in taskList track by $index">
+                             <td class="text-center task-check no-padding-left no-padding-right">
+                                 <input type="checkbox" ng-model="task.checked"/>
+                             </td>
+                             <td ng-class="{'task-completed':task.checked}">
+                                {{task.description}}
+                             </td>
+                             <td class="text-center no-padding-left no-padding-right task-operate">
+                                 <div class="btn-group">
+                                      <button class="btn btn-info btn-xs">编辑</button>
+                                      <button class="btn btn-danger btn-xs">删除</button>
+                                 </div>
+                             </td>
+
+                         </tr>
+
+                     </table>
+
+                 </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
